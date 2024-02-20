@@ -1,59 +1,261 @@
-#titulo-alexandria {
-    text-align: center;
-}
-#subtitulo-alexandria {
-    margin-top: -15px;
-    text-align: center;
-}
-#linha-alexandria {
-    width: 100%;
-    letter-spacing: 13px;
-    text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&family=Signika:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
 
-ul {
+  body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 2%;
+  }
+  
+  *{
     margin: 0;
     padding: 0;
-}
+    box-sizing: border-box;
+  }
+  
 
-.livros {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-}
-.livro {
-    margin-right: 50px;
-}
-.livro_filhos {
-    background-color: #e0e0e0;
-}
+  body {
+    font-family: Arial, sans-serif;
+    animation: gradientAnimation 20s ease infinite;
+    background: linear-gradient(45deg, #F6E5CC, #f8e1be, #f3cf99, #f8e4c7); /*COR DO FUNDO*/
+    background-size: 400% 400%;
+  }
 
-a {
-    margin: 10px;
-}
-
-label {
-    display: block;
-    margin-bottom: 20px;
-}
-
-footer {
-    text-align: center;
-    height: 50px;
-    margin-top: 50px;
-}
-#frase {
-    margin-bottom: -15px;
-}
-#dragao-imagem {
+  .container{
+    position: relative;
     width: 100%;
-    height: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .container img{
     position: absolute;
-    bottom: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
     left: 0;
     object-fit: contain;
-}
 
-.content-inside {
-    padding-bottom: 100px;
+  }
+
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes animacao {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes entrada { /* animação */
+    0% {  
+      transform: translateY(30%);
+      opacity: 0;
+    }
+   
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+
+    }
+  }
+  @keyframes moveDragon {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    50% {
+        transform: translate(6%, 6%);
+    }
+    100% {
+        transform: translate(0%, 0%);
+    }
 }
+  
+  /* DESIGNER TITULO */
+  #titulo-alexandria {
+    text-align: center;
+    font-family: 'Protest Riot', sans-serif;
+    font-family: 'Signika', sans-serif;/*FONTE - obs: Referencia no TOP da fonte*/
+    font-size: 3rem;
+    color: #333;
+  }
+   /* DESIGNER DA CAIXA DE LIVROS */
+  #subtitulo-alexandria {
+    font-family: 'Poppins'; /*FONTE - obs: Referencia no TOP da fonte*/
+    padding:5%;
+    font-size: 15px;
+    color: #ffffff;
+  }
+  
+  #linha-alexandria {
+    text-align: center;
+    padding: 1rem 0;
+    color: #333;
+  }
+  
+  .livros {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 15px;
+  }
+  .livros2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  
+  /* DESIGNER DA CAIXA DE LIVROS */
+  .livro {
+    background-color: #ffffff;
+    border-radius: 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 2%;
+    margin: 1%;
+    padding: 5px;
+    text-align: center;
+    transition: background 0.3s ease;
+    font-family: 'Poppins'; /*AQUI VOCE MUDA A FONTE DENTRO DAS CAIXA AS 2 FONTES*/
+  }
+  
+  .livro h2 {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: #333;
+  }
+  
+  .livro_filhos ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .livro_filhos li {
+    padding: 0.5rem 0;
+  }
+  
+  .livro_filhos a {
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    display: block;
+  }
+
+  .citacao {
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+    padding: 0%;
+    margin-top: 15px;
+}
+  
+  .livro_filhos a:hover {
+    text-decoration: underline;
+  }
+   /* direitos reservados */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .livro:hover { /* para o mouser encima da caixa livro*/
+    background: linear-gradient(to top, #ffea95, #fff6d3);
+    animation: gradientAnimation 2s ease infinite;
+    transform: scale(1.1);
+  }
+  
+  /* imagem dragão */
+  #dragao-imagem {
+    animation: entrada 3s ease-out forwards, moveDragon 10s ease-in-out infinite;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: auto;
+    z-index: -1;
+  }
+  .button{
+    position:relative;
+    display:inline-block;
+    margin-top: 20px;
+  }
+
+  .button a{
+    color:white;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:20px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#FFA12B;
+    display:block;
+    position:relative;
+    padding:5px 10px;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .button a:active{
+    color:rgb(238, 238, 238);
+    top:10px;
+    background-color:#F78900;
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+  }
+  
+  .button:after{
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#2e2e2e;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
